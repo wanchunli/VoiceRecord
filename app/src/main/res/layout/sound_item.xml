@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_sound_item"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_margin="5dp"
+    android:background="@drawable/touch_bg"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/voice_record_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="开始说话"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:id="@+id/voice_record_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_voice_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_voice_end" />
+
+        <ImageView
+            android:id="@+id/iv_sound_record"
+            android:layout_width="28dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/iv_voice_end"
+            android:src="@drawable/ar_sound_play_animation"
+            android:visibility="gone" />
+
+        <com.wan.grace.voicerecord.WaveView
+            android:id="@+id/siri_record_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            app:waveAmount="2"
+            app:waveColor="@android:color/white"
+            app:waveFrequency="2.0"
+            app:waveHeight="15dp"
+            app:waveInitialPhaseOffset="0"
+            app:wavePhaseShift="-0.2"
+            app:waveVerticalPosition="2" />
+
+        <Chronometer
+            android:id="@+id/chronometer"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:text="00:00"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="00:00"-->
+        <!--android:textSize="16sp"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:layout_alignParentRight="true"/>-->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/voice_play_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_sound_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_voice_play" />
+
+        <ImageView
+            android:id="@+id/iv_sound_horn"
+            android:layout_width="28dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/iv_sound_play"
+            android:src="@drawable/ar_sound_play_animation"
+            android:visibility="gone" />
+
+        <com.wan.grace.voicerecord.WaveView
+            android:id="@+id/sound_wave_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            app:waveAmount="2"
+            app:waveColor="@android:color/white"
+            app:waveFrequency="2.0"
+            app:waveHeight="15dp"
+            app:waveInitialPhaseOffset="0"
+            app:wavePhaseShift="-0.2"
+            app:waveVerticalPosition="2" />
+
+        <TextView
+            android:id="@+id/tv_sound_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@+id/iv_sound_horn"
+            android:text="24'"
+            android:textColor="@color/white"
+            android:textSize="14dp" />
+
+        <ImageView
+            android:id="@+id/iv_voice_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_voice_delete" />
+
+    </LinearLayout>
+</RelativeLayout>

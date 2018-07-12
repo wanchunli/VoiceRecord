@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toolbar_minHeight">50dp</dimen>
+    <integer name="config_pop_duration">200</integer>
+    <dimen name="map_control_margin">1dp</dimen>
+    <dimen name="map_control_padding">2dp</dimen>
+    <dimen name="map_control_size">24dp</dimen>
+    <dimen name="pp_sound_item_length">116.5dp</dimen>
+</resources>
