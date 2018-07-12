@@ -24,12 +24,6 @@ import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
-
-/**
- * 展示语音feed,支持点击播放
- * v8.7.5 因发布器也使用SoundItemView，但不需要，也不能依赖PPVideoPlayerManager，所以实现一个父类CommonSoundItemView
- * 依赖PPVideoPlayerManager的，再由SoundItemView实现
- */
 public class CommonSoundItemView extends RelativeLayout implements AudioPlaybackManager.OnPlayingListener {
 
     /**
