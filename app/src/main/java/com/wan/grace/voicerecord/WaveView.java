@@ -86,7 +86,7 @@ public class WaveView extends View {
     public void init(Context context, AttributeSet attrs) {
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.WaveView);
         frequency = a.getFloat(R.styleable.WaveView_waveFrequency, frequency);
-        IdleAmplitude = a.getFloat(R.styleable.WaveView_waveIdleAmplitude, IdleAmplitude);
+        IdleAmplitude = a.getFloat(R.styleable.WaveView_waveAmplitude, IdleAmplitude);
         phaseShift = a.getFloat(R.styleable.WaveView_wavePhaseShift, phaseShift);
         initialPhaseOffset = a.getFloat(R.styleable.WaveView_waveInitialPhaseOffset, initialPhaseOffset);
         waveHeight = a.getDimension(R.styleable.WaveView_waveHeight, waveHeight);
@@ -118,6 +118,7 @@ public class WaveView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         if (!mAmplitudeAnimator.isRunning()) {
+            //当动画不执行时，我们需要绘制一条直线
             canvas.drawLine(0, getHeight() / 2, getWidth(), getHeight() / 2, mPaint);
         } else {
             canvas.drawPath(mPath, mPaint);

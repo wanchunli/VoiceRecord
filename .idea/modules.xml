@@ -3,9 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/VoiceRecord.iml" filepath="$PROJECT_DIR$/.idea/VoiceRecord.iml" />
-      <module fileurl="file://D:\Git\VoiceRecord\VoiceRecord.iml" filepath="D:\Git\VoiceRecord\VoiceRecord.iml" />
+      <module fileurl="file://D:/Git/VoiceRecord/VoiceRecord.iml" filepath="D:/Git/VoiceRecord/VoiceRecord.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:\Git\VoiceRecord\app\app.iml" filepath="D:\Git\VoiceRecord\app\app.iml" />
+      <module fileurl="file://D:/Git/VoiceRecord/app/app.iml" filepath="D:/Git/VoiceRecord/app/app.iml" />
     </modules>
   </component>
 </project>

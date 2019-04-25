@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--attrs-->
     <declare-styleable name="WaveView">
+        <!--频率-->
         <attr name="waveFrequency" format="float" />
-        <attr name="waveIdleAmplitude" format="float" />
+        <!--振幅-->
+        <attr name="waveAmplitude" format="float" />
+        <!--相移-->
         <attr name="wavePhaseShift" format="float" />
+        <!--初始的相移-->
         <attr name="waveInitialPhaseOffset" format="float" />
+        <!--波峰高度-->
         <attr name="waveHeight" format="dimension" />
+        <!--波动的垂直位置-->
         <attr name="waveVerticalPosition" format="float" />
+        <!--波的颜色-->
         <attr name="waveColor" format="color" />
+        <!--波数-->
         <attr name="waveAmount" format="integer" />
     </declare-styleable>
 </resources>

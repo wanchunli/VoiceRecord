@@ -125,13 +125,19 @@ public class CommonSoundItemView extends RelativeLayout implements AudioPlayback
         setFileNameAndPath();
 
         mRecorder = new MediaRecorder();
+        //设置用于录制的音源
         mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+        //设置在录制过程中产生的输出文件的格式
         mRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
+        //设置输出文件的路径
         mRecorder.setOutputFile(mFilePath);
+        //设置audio的编码格式
         mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
+        //设置录制的音频通道数
         mRecorder.setAudioChannels(1);
-        //高质量
+        //设置录制的音频采样率（高质量）
         mRecorder.setAudioSamplingRate(44100);
+        //设置录制的音频编码比特率
         mRecorder.setAudioEncodingBitRate(192000);
     }
 
@@ -371,6 +377,7 @@ public class CommonSoundItemView extends RelativeLayout implements AudioPlayback
     public void startRecording() {
         initMediaRecorder();
         try {
+            //开始
             mRecorder.prepare();
             mRecorder.start();
             mStartingTimeMillis = System.currentTimeMillis();
@@ -394,6 +401,7 @@ public class CommonSoundItemView extends RelativeLayout implements AudioPlayback
 
     public void stopRecording() {
         try {
+            //结束
             mRecorder.stop();
         } catch (IllegalStateException e) {
             // TODO 如果当前java状态和jni里面的状态不一致，
