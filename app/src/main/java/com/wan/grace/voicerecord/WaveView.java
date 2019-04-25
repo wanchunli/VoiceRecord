@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 /**
@@ -106,6 +107,7 @@ public class WaveView extends View {
 
     private void initAnimation() {
         if (mAmplitudeAnimator == null) {
+            //不断的改变amplitude属性的值不断的调用setAmplitude，从而不断的重绘
             mAmplitudeAnimator = ObjectAnimator.ofFloat(this, "amplitude", 1f);
             mAmplitudeAnimator.setRepeatCount(ObjectAnimator.INFINITE);
         }
@@ -128,32 +130,34 @@ public class WaveView extends View {
 
     private void updatePath(Canvas canvas) {
         mPath.reset();
+        //每次绘制的相移变化值
         phase += phaseShift;
+        //每次绘制的振幅
         amplitude = Math.max(level, IdleAmplitude);
         for (int i = 0; i < waveNumber; i++) {
             //波形图在控件内部高度位置
             float wavePosition = getHeight() / waveVerticalPosition;
             float width = getWidth();
             float mid = width / 2.0f;
-
+            //最大振幅为波峰的最大高度
             float maxAmplitude = waveHeight;
-
-            // Progress is a value between 1.0 and -0.5, determined by the current wave idx, which is used to alter the wave's amplitude.
+            //第i+1根线的进度信息
             float progress = 1.0f - (float) i / waveNumber / 8;
+            //为了区分不同曲线的高度
             float normedAmplitude = (1.5f * progress - 0.5f) * amplitude;
             for (int x = 0; x < width; x++) {
+                Log.i("scal",1 / mid * (x - mid)+"");
                 float scaling = (float) (-Math.pow(1 / mid * (x - mid), 2) + 1);
                 float y = (float) (scaling * maxAmplitude * normedAmplitude * Math.sin(2 *
                         Math.PI * (x / width) * frequency + phase + initialPhaseOffset) + wavePosition);
                 if (x == 0) {
                     mPath.moveTo(x, y);
                 } else {
-                    //需要使没根波线高度区别开来
+                    //需要使每根波线高度区别开来
                     mPath.lineTo(x + i * 15, y);
                 }
             }
         }
-//        mPath.close();
     }
 
     public void setAmplitude(float amplitude) {

@@ -444,8 +444,8 @@ public class CommonSoundItemView extends RelativeLayout implements AudioPlayback
     private Handler mHandler = new Handler() {
         public void handleMessage(Message msg) {
             float level = (float) msg.obj;
-//            siriRecordWaveView.setWaveHeight(dipToPx(context, 5 + level * 5));
-//            audioDBChanged();
+            soundWaveView.setWaveHeight(dipToPx(context, 5 + level * 5));
+            audioDBChanged();
         }
     };
 
